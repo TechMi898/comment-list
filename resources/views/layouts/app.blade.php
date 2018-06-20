@@ -6,6 +6,8 @@
     </head>
     
     <body>
+        @include('commons.error_comments')
+        
         @yield('content')
     </body>
 </html>

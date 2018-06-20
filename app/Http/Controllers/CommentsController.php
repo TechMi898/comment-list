@@ -46,6 +46,10 @@ class CommentsController extends Controller
      // post で comments/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
+        $this -> valisate ($request, [
+            'content' => 'required|max191',
+            ]);
+        
         $comment = new Comment;
         $comment->content = $request->content;
         $comment->save();
